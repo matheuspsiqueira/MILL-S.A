@@ -1,0 +1,261 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <title>MILL S.A</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+  <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+  <link rel="stylesheet" href="{% static 'css/teste.css' %}">
+  <!--Icone-->
+</head>
+<body>
+
+  <!-- page loader start -->
+  <div class="page-loader"></div>
+  <!-- page loader end -->
+ 
+   <!-- header start -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+  <body>
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <a href="{% url 'index' %}" class="navbar-brand">MILL S.A</a>
+
+                  {% if user.is_authenticated %}
+
+                  <a class="links" href="{% url 'logout' %}"><i class="fa fa-fw fa-user"></i>Logout</a>
+                  <a class="links" href="{% url 'dashboard' %}"><i class="fa fa-fw fa-table"></i>Dashboard</a>
+                  <a class="links" href="{% url 'index' %}"><i class="fa fa-fw fa-home"></i>Home</a>
+
+                  {% else %}   
+                  <a class="links" href="{% url 'cadastro_funcionario' %}"><i class="fa fa-fw fa-user"></i> Cadastro</a>
+                  <a class="links" href="{% url 'login' %}"><i class="fa fa-fw fa-user"></i> Login</a>
+                  <a class="links" href="#footer"><i class="fa fa-fw fa-envelope"></i> Contact</a> 
+                  <a class="links" href="{% url 'index' %}"><i class="fa fa-fw fa-home"></i> Home</a> 
+
+                  {% endif %}
+                </div>
+              </div>
+          </nav>
+        </div>
+    </header>
+  </body>
+   
+  <!-- header end -->
+  <!-- home section start -->
+  <section class="home-section" id="home">
+    <div class="home-bg"></div>
+    <div class="container">
+      <div class="row min-vh-100 align-items-center">
+        <div class="home-text" data-aos="fade-up" data-aos-duration="1000">
+          <div class="titulo">
+            <h1>MILL S.A</h1>
+          </div>
+          <br>
+          <p>Somos uma empresa de gestão de estoque que acredita no método de estocagem e gerenciamento estratégico como diferenciais competitivos. Oferecemos soluções focadas e comprometidas com a necessidade específica do seu negócio.</p>
+          <a href="#our-menu" class="btn btn-default">Conheça Nossas Áreas de Atuação</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- home section end -->
+
+  <!-- about section start -->
+  <section class="about-section sec-padding" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="section-title">
+          <h2 data-title="Nossa Trajetória" data-aos="fade-up">SOBRE NÓS</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="about-text" data-aos="fade-right">
+           <h3>Bem-Vindo a MILL S.A</h3>
+           <p>No segmento de gestão de estoque desde 2020, a MILL S.A se mostra a parceria ideal dentre as várias opções de empresas de controle de fluxo de mercadoria.</p>
+           <p>Composta por profissionais altamente qualificados e comprometidos com os objetivos dos clientes, a MILL S.A é uma empresa de gestão de estoque que promove a organização e o controle de suas mercadorias em determinado espaço e tempo.</p>
+           <p>Utilizamos metodologias modernas de gestão, mantendo o equilíbrio entre compras, armazenagem e entregas, controlando as entradas e as saídas das mercadorias, movimentando seu ciclo.</p>
+           <a href="#our-menu" class="btn btn-default">Métodos de Controle de Estoque</a>
+        </div>
+        <div class="about-img" data-aos="fade-left">
+           <div class="img-box">
+             <img src="{% static '/img/galpao-leao1.png' %}" alt="about img" class="img-sobre">
+             
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- about section end -->
+
+  <!-- menu section start -->
+  <section class="menu-section sec-padding" id="our-menu">
+    <div class="container">
+      <div class="row">
+        <div class="section-title">
+          <h2 data-title="Segmentos" data-aos="fade-up">Alguns Métodos de Controle de Estoque</h2>
+        </div>
+      </div>
+      <div class="row menu-tab-content active" id="lunch">
+        <div class="menu-item" data-aos="fade-up-right">
+          <div class="menu-item-title">
+            <img src="{% static '/img/metodos/img1.png' %}" alt="menu item thumbnail" class="img-area">
+              <div class="section-title">
+                <h1 class="title">Método do custo específico</h1>
+                  <h4>Método para controle de estoque recomendada para produtos com poucas unidades, mas com valor considerável, como veículos e grandes máquinas. Esse método atribui valor a cada unidade do estoque. Logo, ele é usado apenas quando é possível apurar o preço ou o custo de cada item, considerando que o valor total do estoque consiste na soma dos custos específicos dos itens. Por terem uma rotatividade menor, fica mais fácil diminuir o valor da mercadoria que sai do estoque do seu valor total, atualizando os dados.</h4>
+              </div>
+          </div>
+        </div>
+        <div class="row menu-tab-content active" id="lunch">
+          <div class="menu-item" data-aos="fade-up-right">
+            <div class="menu-item-title">
+              <img src="{% static '/img/metodos/img2.jpg' %}" alt="menu item thumbnail" class="img-area">
+                <div class="section-title">
+                  <h1 class="title">PEPS (Primeiro que Entra, Primeiro que Sai)</h1>
+                    <h4>Método para controle de estoque recomendado para produtos alimentícios e perecíveis, ajudando na redução de desperdícios. Trata-se de um dos métodos de gestão de estoque mais utilizados pelas empresas na atualidade. </h4>
+                    <h4>Entre as suas vantagens estão o controle da validade dos produtos, o combate a perdas e a aproximação do custo de cada produto ao seu custo real, uma vez que o cálculo é feito a partir das mercadorias mais velhas para as mais novas, evitando que os produtos estraguem nas prateleiras, a ordem cronológica de entrada dos produtos no estoque será priorizada para definir que os mais antigos são vendidos primeiramente.</h4>
+                </div>
+            </div>
+          </div>
+        <div class="row menu-tab-content active" id="lunch">
+            <div class="menu-item" data-aos="fade-up-right">
+              <div class="menu-item-title">
+                <img src="{% static '/img/metodos/just-in-time.jpeg' %}" alt="menu item thumbnail" class="img-area">
+                  <div class="section-title">
+                    <h1 class="title">Just in Time</h1>
+                      <h4>O Just in Time é um método de gestão desenvolvido especialmente para manter o estoque com a menor quantidade de mercadorias possível.
+                      A vantagem desse sistema de gestão é a redução de custos com armazenamento e compra de produtos. Mas é preciso um acompanhamento rigoroso por parte dos gestores, para evitar que a empresa perca boas oportunidades de vendas por não ter a quantidade suficiente de produtos disponível no estoque.
+                        É essencial contar com fornecedores ágeis, que sejam capazes de realizar as entregas de forma rápida e quantas vezes forem necessárias.
+                        </h4>
+              </div>
+            </div>
+        </div>
+        <div class="row menu-tab-content active" id="lunch">
+          <div class="menu-item" data-aos="fade-up-right">
+            <div class="menu-item-title">
+                <img src="{% static '/img/metodos/curva-abc-1.png' %}" alt="menu item thumbnail" class="img-area">
+                  <div class="section-title">
+                    <h1 class="title">Curva ABC</h1>
+                      <h4>Esse método de gestão é muito eficiente em termos do ajustamento do processo de compras, baseia-se em 3 pilares: giro de estoque, faturamento e lucratividade. Além disso, ela é dividida entre as categorias A, B e C, que representam os produtos e suas variações dentro desses pilares.</h4>
+                      <h4>	A categoria A, classifica as mercadorias que possuem giro razoável, mas geram alta lucratividade e faturamento, são produtos que não podem faltar no estoque.</h4>
+                      <h4>	No caso da categoria B, são aqueles que devem corresponder à maior parte do estoque, pois possuem um giro alto, contribuindo bem para o aumento do faturamento, mas com a lucratividade razoável.</h4>
+                      <h4>	Por fim, os produtos da categoria C são aqueles com pouco giro, pouco lucro e pouco faturamento. Logo, a quantidade em estoque também é menor, mas ainda assim é importante para atender a demanda de todos os consumidores.</h4>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </section>
+  <!-- menu section end -->
+
+  <!-- testimonials section start -->
+  <section class="testimonials-section sec-padding" id="testimonials">
+    <div class="container">
+      <div class="row">
+        <div class="section-title">
+          <h2 data-title="Depoimentos" data-aos="fade-up"></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="testi-item" data-aos="zoom-in">
+          <div class="testi-author">
+             <div class="testi-author-name">
+               <h3>Leonardo</h3>
+               <span>Gerente da Ambev</span>
+             </div>
+             <div class="testi-author-img">
+               <img src="{% static '/img/testimonials/img1.png' %}" alt="testi author img">
+             </div>
+          </div>
+          <p>Eu estava procurando por um sistema de controle de estoque fácil de usar e o encontrei no MILL. Ele me ajudou a manter o controle de todos os meus produtos e a tomar decisões informadas.</p>
+          <div class="ratings">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="testi-item" data-aos="zoom-in">
+          <div class="testi-author">
+             <div class="testi-author-name">
+               <h3>Matheus Siqueira</h3>
+               <span>Gerente da Amazon</span>
+             </div>
+             <div class="testi-author-img">
+               <img src="{% static '/img/testimonials/img2.png' %}" alt="testi author img">
+             </div>
+          </div>
+          <p>Antes de usar MILL, eu tinha dificuldade em controlar meu estoque, mas agora posso ver facilmente quais itens estão faltando e quando é hora de reabastecer.</p>
+          <div class="ratings">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="testi-item" data-aos="zoom-in">
+          <div class="testi-author">
+             <div class="testi-author-name">
+               <h3>Lucas Palmeira</h3>
+               <span>Gerente da Reserva</span>
+             </div>
+             <div class="testi-author-img">
+               <img src="{% static '/img/testimonials/img3.png' %}" alt="testi author img">
+             </div>
+          </div>
+          <p>Eu recomendo MILL para qualquer pessoa que precise controlar seu estoque. Ele é fácil de usar e me ajuda a economizar tempo e dinheiro.</p>
+          <div class="ratings">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- testimonials section end -->
+
+  <!-- footer start -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-item" data-aos="fade-up">
+          <h3>Localização</h3>
+          <p>Rua Coronel Carlos Matos, 96<br> Centro - Nova Iguaçu - RJ <br>CEP: 26.210-200</p>
+        </div>
+        <div class="footer-item" data-aos="fade-up">
+          <h3>Horário de Funcionamento</h3>
+          <p>Segunda à Sexta <br> 9:00 AM - 10:00 PM </p>
+        </div>
+        <div class="footer-item" data-aos="fade-up">
+          <h3>Contato</h3>
+          <p>21 9 1234-5678</p>
+          <p>MILL@gmail.com</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="copyright">
+         PROJETO SENAC-RJ &copy; 2023 - Designed by Equipe MILL
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer end -->
+  <script src="{% static '/js/aos.js' %}"></script> 
+  <script src="{% static '/js/script.js' %}"></script>
+
+</body>
+</html>
